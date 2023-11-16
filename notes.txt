@@ -1,0 +1,36 @@
+structure:
+ - model.h
+  - hosts an init(), update(), and eval() function for the model
+   - init() sets the initial state of the model
+   - update() is like init(), but it runs every time the values need to be changed
+   - eval() actually evaluates the model to get a sample
+ - wav.h
+  - writes to wav files
+ - filters.h
+  - contains the classes for the filters (and other things) in the model
+ - values.h
+  - contains constants and values that need to be set
+   - these are all contained in a 'params' struct
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+the cascade/parallel formant synthesizer:
+
+two sound sources:
+ - voicing source
+ - aspiration source
+
+voicing source:
+
+                       +-> RGZ -> AV  -+
+ f0 -> impulse -> RGP -+               +--->
+                       +-> RGS -> AVS -+
+
+ - uses f0, av, avs
+ - f0 feeds into impulse generator
+  - produces an impulse every [sample_rate/f0]th sample
+
+ - RGP acts as a low pass filter
+ - RGZ is an antiresonator
+ - RGS
