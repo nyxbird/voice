@@ -133,7 +133,7 @@
     <ClInclude Include="model.h" />
     <ClInclude Include="filters.h" />
     <ClInclude Include="old_wav.h" />
-    <ClInclude Include="values.h" />
+    <ClInclude Include="params.h" />
     <ClInclude Include="wav.h" />
   </ItemGroup>
   <ItemGroup>

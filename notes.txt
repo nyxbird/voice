@@ -34,3 +34,8 @@ voicing source:
  - RGP acts as a low pass filter
  - RGZ is an antiresonator
  - RGS
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 11/20/23
+ I was able to achieve desired waveform for the normal voicing source, but only when the T value for RGP and RGZ is set to 4/SR instead of SR.
+ Also, using white noise as a base instead of impulses is a useful way to see how the resonator and antiresonator work.

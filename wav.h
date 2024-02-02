@@ -3,12 +3,13 @@
 
 struct wav_stream {
 	int channels = 1;
-	int sample_rate = 44100;
+	int sample_rate = 10000;
 	int bits_per_sample = 16;
 	std::fstream file;
 
-	void open(std::string name) {
+	void open(std::string name, int sr) {
 		file.open(name, std::ios::out | std::ios::binary);
+		sample_rate = sr;
 	}
 
 	// writes the file header based on the length in seconds
